@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flayGlobalLocationBanner"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:padding="16dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:background="@drawable/shape_rounded_rectangle_white"
+        android:elevation="24dp"
+        app:cardCornerRadius="8dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/mint"
+        android:outlineAmbientShadowColor="#50313E3D"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@drawable/bg_location_banner"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/btnUpdateLocationPermission"
+                android:layout_width="142dp"
+                android:layout_height="26dp"
+                android:background="@drawable/bg_button_long"
+                android:fontFamily="@font/poppins_semibold"
+                android:includeFontPadding="false"
+                android:text="@string/location_banner_button"
+                android:textColor="#0D604A"
+                android:textSize="@dimen/font_size_tiny"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <Button
+                android:id="@+id/btnLearnMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_semibold"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.1"
+                android:text="@string/inline_banner_instore_secondary_link"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_10"
+                app:layout_constraintBottom_toBottomOf="@id/btnUpdateLocationPermission"
+                app:layout_constraintRight_toLeftOf="@id/btnUpdateLocationPermission"
+                app:layout_constraintTop_toTopOf="@id/btnUpdateLocationPermission" />
+
+            <ImageView
+                android:id="@+id/ivUpdateLocationDismiss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dismiss_circle"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvUpdateLocationTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/poppins_bold"
+                android:includeFontPadding="false"
+                android:text="@string/location_banner_title"
+                android:textColor="#fff"
+                android:textSize="@dimen/font_size_medium"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/ivUpdateLocationDismiss"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvUpdateLocationInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:includeFontPadding="false"
+                android:lineHeight="16dp"
+                android:textColor="#fff"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="@dimen/font_size_small"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUpdateLocationTitle"
+                tools:text="Change your location access to Always and Precise, so we can send you offer notifications when you shop." />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</FrameLayout>
