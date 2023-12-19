@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.widget.FrameLayout
 import androidx.annotation.ColorInt
 import ca.six.globalbannerdemo.R
+import kotlinx.android.synthetic.main.view_update_location_permission.view.*
 
 class UpdateLocationPermissionBannerView @JvmOverloads constructor(
     context: Context,
@@ -18,11 +19,7 @@ class UpdateLocationPermissionBannerView @JvmOverloads constructor(
     init {
         LayoutInflater.from(context).inflate(R.layout.view_update_location_permission, this, true)
 
-        val alwaysAndPreciseText = context.getString(R.string.location_banner_permission)
-            .font(R.font.poppins_semibolditalic)
-            .color(Color.parseColor("#55DCB8"))
-        val rawDescription = context.getString(R.string.location_banner_description).formatSpanned(alwaysAndPreciseText)
-        tvUpdateLocationInfo.text = rawDescription
+        tvUpdateLocationInfo.text = "Change your location access to precise and always, so we can notify you about Instant Rewards when you shop."
 
         ivUpdateLocationDismiss.setOnClickListener {
             if(context is Activity) {

@@ -24,29 +24,27 @@
             android:background="@drawable/bg_location_banner"
             android:padding="16dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnUpdateLocationPermission"
                 android:layout_width="142dp"
                 android:layout_height="26dp"
                 android:background="@drawable/bg_button_long"
-                android:fontFamily="@font/poppins_semibold"
                 android:includeFontPadding="false"
-                android:text="@string/location_banner_button"
+                android:text="update permision"
                 android:textColor="#0D604A"
                 android:textSize="@dimen/font_size_tiny"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnLearnMore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 android:background="@color/transparent"
-                android:fontFamily="@font/poppins_semibold"
                 android:includeFontPadding="false"
                 android:letterSpacing="0.1"
-                android:text="@string/inline_banner_instore_secondary_link"
+                android:text="learn more"
                 android:textColor="#fff"
                 android:textSize="@dimen/font_size_10"
                 app:layout_constraintBottom_toBottomOf="@id/btnUpdateLocationPermission"
@@ -66,9 +64,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
-                android:fontFamily="@font/poppins_bold"
                 android:includeFontPadding="false"
-                android:text="@string/location_banner_title"
+                android:text="update location"
                 android:textColor="#fff"
                 android:textSize="@dimen/font_size_medium"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -81,7 +78,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="@font/poppins_medium"
                 android:includeFontPadding="false"
                 android:lineHeight="16dp"
                 android:textColor="#fff"
