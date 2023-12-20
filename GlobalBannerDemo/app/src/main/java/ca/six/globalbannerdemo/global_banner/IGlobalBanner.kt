@@ -1,7 +1,7 @@
-package ca.six.globalbannerdemo.core
+package ca.six.globalbannerdemo.global_banner
 
 import androidx.lifecycle.Lifecycle
-import ca.six.globalbannerdemo.MyApp
+import ca.six.globalbannerdemo.core.MyApp
 import ca.six.globalbannerdemo.R
 
 interface IGlobalBanner {

@@ -1,4 +1,4 @@
-package ca.six.globalbannerdemo.core
+package ca.six.globalbannerdemo.global_banner
 
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner

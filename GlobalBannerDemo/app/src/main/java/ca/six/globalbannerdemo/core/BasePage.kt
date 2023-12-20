@@ -1,8 +1,8 @@
-package ca.six.globalbannerdemo
+package ca.six.globalbannerdemo.core
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import ca.six.globalbannerdemo.core.IGlobalBanner
+import ca.six.globalbannerdemo.global_banner.IGlobalBanner
 
 open class BasePage : AppCompatActivity, IGlobalBanner {
     // 支持两种构造函数

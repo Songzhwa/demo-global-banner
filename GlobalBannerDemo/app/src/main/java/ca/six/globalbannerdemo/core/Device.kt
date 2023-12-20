@@ -1,4 +1,4 @@
-package ca.six.globalbannerdemo
+package ca.six.globalbannerdemo.core
 
 import android.content.Context
 import android.content.Context.CONNECTIVITY_SERVICE

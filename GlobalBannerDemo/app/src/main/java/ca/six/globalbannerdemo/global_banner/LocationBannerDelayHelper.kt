@@ -1,4 +1,4 @@
-package ca.six.globalbannerdemo.core
+package ca.six.globalbannerdemo.global_banner
 
 
 import android.app.Activity
@@ -6,8 +6,8 @@ import android.graphics.Color
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
-import ca.six.globalbannerdemo.Device
-import ca.six.globalbannerdemo.MyApp
+import ca.six.globalbannerdemo.core.Device
+import ca.six.globalbannerdemo.core.MyApp
 import java.lang.ref.WeakReference
 
 object LocationBannerDelayHelper {
