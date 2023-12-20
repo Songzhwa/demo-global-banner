@@ -27,7 +27,7 @@ or Java:
 
 That's it, that's all you need to do. When the time is right, the global banner will show.
 
-# Classes & Use Cases
+# Classes
 
 ## LocationBannerViewController
 This class will show or dismiss the global location banner.
@@ -44,6 +44,17 @@ Use cases are complex, please see below.
 ## LocationBannerDelayHelper
 The global location banner need to show with a 2 seconds delay. The use cases are complex, that's why this class was made.2
 
+```mermaid
+
+graph TB
+A(<h5>IGlobalBanner</h5>Activity, Fragment)-->B(<h5>LifecycleObserver</h5>)
+B-->C(<h5>DelayHelper</h5>show global banner with animation)
+B --> D(<h5>Actv, Frag</h5>show banner without anim)
+C-->E
+D-->E(<h5>ViewController</h5>all preconditions lie here<br/>permission, appSessionCount, PLM selection, ...<br/>show and dismiss banner view)
+```
+
+# Use cases
 ### Precondition
 For the newly signup user, if you select "Not now" in the primary modal in the first app session after signup, then global banner will not show at all.
 Global banner (update to Precis and All location permision) only shows after you select the "Yes please" in the primary modal.
