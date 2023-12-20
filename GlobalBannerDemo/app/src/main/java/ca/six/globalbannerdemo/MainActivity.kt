@@ -3,6 +3,8 @@ package ca.six.globalbannerdemo
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import ca.six.globalbannerdemo.core.BaseFragment
+import ca.six.globalbannerdemo.core.BasePage
 import ca.six.globalbannerdemo.ext.nav
 import ca.six.globalbannerdemo.ext.replace
 import kotlinx.android.synthetic.main.actv_test_global_banner_one.*
@@ -16,6 +18,7 @@ class TestGlobalBannerPage1 : BasePage(R.layout.actv_test_global_banner_one) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        btnTestGB.text = "next(true)"
         btnTestGB.setOnClickListener {
             println("szw -> page2 button clicked")
             nav<TestGlobalBannerPage2>()
@@ -36,6 +39,7 @@ class TestGlobalBannerPage2 : BasePage(R.layout.actv_test_global_banner_two) {
     override val isGlobalBannerEnabled: Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        tvBottomText.text = "next(true)"
         tvBottomText.setOnClickListener { nav<TestGlobalBannerPage3>() }
     }
 }
