@@ -9,21 +9,6 @@
         android:textSize="30dp" android:textColor="#f00" android:textStyle="bold"
         tools:text="hello" android:layout_gravity="center"/>
 
-    <Button android:id="@+id/btnFrag1"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:textSize="30dp" android:textAllCaps="false"
-        android:text="print" android:layout_gravity="center"/>
-
-    <Button android:id="@+id/btnFrag2"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:textSize="30dp" android:textAllCaps="false"
-        android:text="action" android:layout_gravity="center"/>
-
-    <Button android:id="@+id/btnFrag3"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:textSize="30dp" android:textAllCaps="false"
-        android:text="prev" android:layout_gravity="center"/>
-
     <Button android:id="@+id/btnFrag4"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:textSize="30dp" android:textAllCaps="false"
