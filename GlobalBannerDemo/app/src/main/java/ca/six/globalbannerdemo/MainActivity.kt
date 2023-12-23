@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.frag_tv.*
 class TestGlobalBannerPage1 : BasePage(R.layout.actv_test_global_banner_one) {
     override val isGlobalBannerEnabled: Boolean = true
     override val globalBannerBackgroundColor: Int = Color.WHITE
-    override val isImmersive = true
+    override val isImmersiveEffect = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

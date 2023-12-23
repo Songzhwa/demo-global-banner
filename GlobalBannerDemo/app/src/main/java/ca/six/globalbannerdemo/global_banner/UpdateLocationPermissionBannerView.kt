@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import androidx.annotation.ColorInt
+import androidx.core.view.isVisible
 import ca.six.globalbannerdemo.R
 import kotlinx.android.synthetic.main.view_update_location_permission.view.*
 
@@ -18,10 +19,11 @@ class UpdateLocationPermissionBannerView @JvmOverloads constructor(
     init {
         LayoutInflater.from(context).inflate(R.layout.view_update_location_permission, this, true)
 
-        tvUpdateLocationInfo.text = "Change your location access to precise and always, so we can notify you about Instant Rewards when you shop."
+        tvUpdateLocationInfo.text =
+            "Change your location access to precise and always, so we can notify you about Instant Rewards when you shop."
 
         ivUpdateLocationDismiss.setOnClickListener {
-            if(context is Activity) {
+            if (context is Activity) {
                 LocationBannerViewController.dismissGlobalBanner(context)
             }
         }
@@ -33,7 +35,16 @@ class UpdateLocationPermissionBannerView @JvmOverloads constructor(
         }
     }
 
-    fun setBannerBackgroundColor(@ColorInt color: Int){
+    fun setBannerBackgroundColor(@ColorInt color: Int) {
         flayGlobalLocationBanner.setBackgroundColor(color)
+    }
+
+    fun setImmersiveEffect(isImmersive: Boolean) {
+        if (isImmersive) {
+            viewStatusBg.isVisible = true
+            viewStatusBg.setBackgroundColor(context.getColor(R.color.cash))
+        } else {
+            viewStatusBg.isVisible = false
+        }
     }
 }

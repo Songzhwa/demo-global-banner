@@ -34,8 +34,8 @@ object LocationBannerViewController {
         if (!isBannerAdded && isPartialPermitted){
             val child = UpdateLocationPermissionBannerView(activity)
             child.setBannerBackgroundColor(bannerBackgroundColor)
+            child.setImmersiveEffect(isImmersive)
             contentLayout.addView(child, 0)
-            //TODO isImmersive
 
             if (needToShowAnimation) {
                 contentLayout.startAnimation(showAnim)
