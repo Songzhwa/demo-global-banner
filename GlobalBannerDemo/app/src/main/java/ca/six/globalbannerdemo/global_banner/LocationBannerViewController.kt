@@ -1,11 +1,13 @@
 package ca.six.globalbannerdemo.global_banner
 
 import android.app.Activity
+import android.content.res.Resources
 import android.graphics.Color
 import android.view.ViewGroup
 import android.view.animation.TranslateAnimation
 import android.widget.LinearLayout
 import androidx.annotation.ColorInt
+import ca.six.globalbannerdemo.R
 import ca.six.globalbannerdemo.ext.dpToPx
 import ca.six.globalbannerdemo.ext.setMarginsTop
 
@@ -21,7 +23,8 @@ object LocationBannerViewController {
         showAnim.duration = 1000
     }
 
-    fun showGlobalBanner(activity: Activity?, @ColorInt bannerBackgroundColor: Int = Color.WHITE, marginTop: Int = 0) {
+    fun showGlobalBanner(activity: Activity?, @ColorInt bannerBackgroundColor: Int = Color.WHITE,
+                         marginTop: Int = 0, @ColorInt statusBarColor: Int = Color.WHITE) {
         if (activity == null) return
         val contentLayout = getContentLinearLayout(activity) ?: return
         val isBannerAdded = isGlobalBannerAdded(activity)
@@ -34,6 +37,7 @@ object LocationBannerViewController {
             child.setBannerBackgroundColor(bannerBackgroundColor)
             contentLayout.addView(child, 0)
             child.setMarginsTop(marginTop)
+            activity.window.statusBarColor = statusBarColor
 
             if (needToShowAnimation) {
                 contentLayout.startAnimation(showAnim)
