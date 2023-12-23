@@ -7,6 +7,7 @@ import android.view.animation.TranslateAnimation
 import android.widget.LinearLayout
 import androidx.annotation.ColorInt
 import ca.six.globalbannerdemo.ext.dpToPx
+import ca.six.globalbannerdemo.ext.setMarginsTop
 
 object LocationBannerViewController {
     private val showAnim: TranslateAnimation
@@ -20,7 +21,7 @@ object LocationBannerViewController {
         showAnim.duration = 1000
     }
 
-    fun showGlobalBanner(activity: Activity?, @ColorInt bannerBackgroundColor: Int = Color.WHITE) {
+    fun showGlobalBanner(activity: Activity?, @ColorInt bannerBackgroundColor: Int = Color.WHITE, marginTop: Int = 0) {
         if (activity == null) return
         val contentLayout = getContentLinearLayout(activity) ?: return
         val isBannerAdded = isGlobalBannerAdded(activity)
@@ -32,6 +33,8 @@ object LocationBannerViewController {
             val child = UpdateLocationPermissionBannerView(activity)
             child.setBannerBackgroundColor(bannerBackgroundColor)
             contentLayout.addView(child, 0)
+            child.setMarginsTop(marginTop)
+
             if (needToShowAnimation) {
                 contentLayout.startAnimation(showAnim)
                 needToShowAnimation = false

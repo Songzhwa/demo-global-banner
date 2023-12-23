@@ -12,10 +12,11 @@ import java.lang.ref.WeakReference
 
 object LocationBannerDelayHelper {
     const val FIRST_SHOW_GLOBAL_LOCATION_BANNER_WITH_ANIMATION = 1321
-    private const val TIMEOUT = 4000L //TODO make it bigger to test the animation delay easier
+    private const val TIMEOUT = 7000L //TODO make it bigger to test the animation delay easier
 
     var activityRef: WeakReference<Activity> = WeakReference(null)
     var globalBannerBackgroundColor = Color.WHITE
+    var marginTop = 0
 
     // animation only show it once per session. So set this to false once the animation has shown.
     var isFirstShowBanner = true
@@ -25,7 +26,7 @@ object LocationBannerDelayHelper {
             if(msg.what != FIRST_SHOW_GLOBAL_LOCATION_BANNER_WITH_ANIMATION) return
             val activity = activityRef.get()
             if (activity != null) {
-                LocationBannerViewController.showGlobalBanner(activity, globalBannerBackgroundColor)
+                LocationBannerViewController.showGlobalBanner(activity, globalBannerBackgroundColor, marginTop)
                 isFirstShowBanner = false
             }
         }

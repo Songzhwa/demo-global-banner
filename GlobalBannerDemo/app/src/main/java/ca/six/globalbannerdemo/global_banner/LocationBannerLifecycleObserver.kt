@@ -4,7 +4,7 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import ca.six.globalbannerdemo.ext.extractActivity
 
-class LocationBannerLifecycleObserver(val bgColor : Int) : DefaultLifecycleObserver {
+class LocationBannerLifecycleObserver(val bgColor : Int, val marginTop: Int) : DefaultLifecycleObserver {
 
     override fun onStart(owner: LifecycleOwner) {
         super.onStart(owner)
@@ -13,11 +13,12 @@ class LocationBannerLifecycleObserver(val bgColor : Int) : DefaultLifecycleObser
         // the first time showing the banner depends on the LocationBannerDelayHelper
         LocationBannerDelayHelper.attach(activity)
         LocationBannerDelayHelper.globalBannerBackgroundColor = bgColor
+        LocationBannerDelayHelper.marginTop = marginTop
         LocationBannerDelayHelper.startTimeoutForBanner()
 
         // once LocationBannerDelayHelper shows the banner once, the activity can normally show the banner as we expected
         if(!LocationBannerDelayHelper.isFirstShowBanner) {
-            LocationBannerViewController.showGlobalBanner(activity, bgColor)
+            LocationBannerViewController.showGlobalBanner(activity, bgColor, marginTop)
         }
     }
 

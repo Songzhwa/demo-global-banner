@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import ca.six.globalbannerdemo.core.BaseFragment
 import ca.six.globalbannerdemo.core.BasePage
+import ca.six.globalbannerdemo.ext.displayContentUnderStatusBar
 import ca.six.globalbannerdemo.ext.nav
 import ca.six.globalbannerdemo.ext.replace
 import kotlinx.android.synthetic.main.actv_test_global_banner_one.*
@@ -14,9 +15,12 @@ import kotlinx.android.synthetic.main.frag_tv.*
 // Global Banner
 class TestGlobalBannerPage1 : BasePage(R.layout.actv_test_global_banner_one) {
     override val isGlobalBannerEnabled: Boolean = true
+    override val globalBannerBackgroundColor: Int = Color.WHITE
+    override val globalBannerMarginTop: Int = 24
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.displayContentUnderStatusBar()
 
         btnTestGB.text = "next(true)"
         btnTestGB.setOnClickListener {
