@@ -16,8 +16,7 @@ object LocationBannerDelayHelper {
 
     var activityRef: WeakReference<Activity> = WeakReference(null)
     var globalBannerBackgroundColor = Color.WHITE
-    var marginTop = 0
-    var statusBarColor = Color.WHITE
+    var isImmersive = false
 
     // animation only show it once per session. So set this to false once the animation has shown.
     var isFirstShowBanner = true
@@ -27,7 +26,7 @@ object LocationBannerDelayHelper {
             if(msg.what != FIRST_SHOW_GLOBAL_LOCATION_BANNER_WITH_ANIMATION) return
             val activity = activityRef.get()
             if (activity != null) {
-                LocationBannerViewController.showGlobalBanner(activity, globalBannerBackgroundColor, marginTop)
+                LocationBannerViewController.showGlobalBanner(activity, globalBannerBackgroundColor, isImmersive)
                 isFirstShowBanner = false
             }
         }

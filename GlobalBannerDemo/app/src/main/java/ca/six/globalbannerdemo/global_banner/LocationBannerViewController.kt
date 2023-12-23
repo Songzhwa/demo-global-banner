@@ -23,8 +23,7 @@ object LocationBannerViewController {
         showAnim.duration = 1000
     }
 
-    fun showGlobalBanner(activity: Activity?, @ColorInt bannerBackgroundColor: Int = Color.WHITE,
-                         marginTop: Int = 0, @ColorInt statusBarColor: Int = Color.WHITE) {
+    fun showGlobalBanner(activity: Activity?, @ColorInt bannerBackgroundColor: Int = Color.WHITE, isImmersive: Boolean = false) {
         if (activity == null) return
         val contentLayout = getContentLinearLayout(activity) ?: return
         val isBannerAdded = isGlobalBannerAdded(activity)
@@ -36,8 +35,7 @@ object LocationBannerViewController {
             val child = UpdateLocationPermissionBannerView(activity)
             child.setBannerBackgroundColor(bannerBackgroundColor)
             contentLayout.addView(child, 0)
-            child.setMarginsTop(marginTop)
-            activity.window.statusBarColor = statusBarColor
+            //TODO isImmersive
 
             if (needToShowAnimation) {
                 contentLayout.startAnimation(showAnim)

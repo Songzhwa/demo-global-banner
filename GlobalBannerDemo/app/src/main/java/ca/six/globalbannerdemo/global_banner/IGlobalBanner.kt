@@ -8,14 +8,12 @@ interface IGlobalBanner {
     val isGlobalBannerEnabled: Boolean
     val globalBannerBackgroundColor: Int
         get() = MyApp.app().getColor(R.color.cash)
-    val globalBannerMarginTop: Int
-        get() = 0
-    val statusBarColorWhenGlobalBannerOn : Int
-        get() = MyApp.app().getColor(R.color.cash)
+    val isImmersive : Boolean
+        get() = false
 
     fun addGlobalBanner(lifecycle: Lifecycle) {
         if (isGlobalBannerEnabled) {
-            val globalBanners = LocationBannerLifecycleObserver(globalBannerBackgroundColor, globalBannerMarginTop, statusBarColorWhenGlobalBannerOn)
+            val globalBanners = LocationBannerLifecycleObserver(globalBannerBackgroundColor, isImmersive)
             lifecycle.addObserver(globalBanners)
         } else {
             LocationBannerDelayHelper.stopTimeoutForBanner()
